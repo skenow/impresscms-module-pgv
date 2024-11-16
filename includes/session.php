@@ -45,12 +45,10 @@ $VERSION_RELEASE = "final";
 $REQUIRED_PRIVACY_VERSION = "3.1";
 $REQUIRED_CONFIG_VERSION = "3.1";
 
-set_magic_quotes_runtime(0);
-
-if (phpversion()<4.1) {
+if (phpversion() < 7.0) {
 	//-- detect old versions of PHP and display error message
 	//-- cannot add this to the language files because the language has not been established yet.
-	print "<html>\n<body><b style=\"color: red;\">PhpGedView requires PHP version 4.1.0 or later.</b><br /><br />\nYour server is running PHP version ".phpversion().".  Please ask your server's Administrator to upgrade the PHP installation.</body></html>";
+	print "<html>\n<body><b style=\"color: red;\">PhpGedView requires PHP version 7.0.0 or later.</b><br /><br />\nYour server is running PHP version ".phpversion().".  Please ask your server's Administrator to upgrade the PHP installation.</body></html>";
 	exit;
 }
 
