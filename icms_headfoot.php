@@ -1,5 +1,18 @@
 <?php
-	ob_start();
+/**
+ * PHP GEDView version information
+ *
+ * The configuration information of this module
+ *
+ * @copyright 2007, The ImpressCMS Project, <https://www.impresscms.org/>
+ * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License (GPL)
+ * @since 1.0
+ * @author Steve Kenow
+ * @package pgv
+ *
+ */
+
+ob_start();
 require_once '../../mainfile.php';
 if (
 	(stristr($_SERVER['SCRIPT_NAME'], 'addmedia') == true) ||
@@ -21,27 +34,25 @@ if (
 	(stristr($_SERVER['SCRIPT_NAME'], 'validategedcom') == true)
 )
 {
-	include_once XOOPS_ROOT_PATH.'/include/cp_functions.php';
+	include_once ICMS_ROOT_PATH . '/include/cp_functions.php';
 	global $xoopsConfig, $xoopsUser;
 	if ($xoopsConfig['gzip_compression'] == 1) {
 		ob_start("ob_gzhandler");
 	} else {
 		ob_start();
 	}
-	xoops_cp_header();
+	icms_cp_header();
 	print '{pgvsplit}';
-	xoops_cp_footer();
+	icms_cp_footer();
 	$output = ob_get_contents();
 	ob_end_clean();
 	$output = str_replace('</head>', "\n{pgvsplit}\n</head>", $output);
-}
-else
-{
-	require_once XOOPS_ROOT_PATH.'/header.php';
+} else {
+	require_once ICMS_ROOT_PATH.'/header.php';
 	$xoopsTpl->assign('xoops_pagetitle', '{pgvtitle}');
 	$xoopsTpl->assign('xoops_module_header', '{pgvsplit}');
 	print '{pgvsplit}';
-	require_once XOOPS_ROOT_PATH.'/footer.php';
+	require_once ICMS_ROOT_PATH.'/footer.php';
 	$output = ob_get_contents();
 	ob_end_clean();
 }
@@ -51,4 +62,3 @@ $GLOBALS['wrapper'] = array(
 	'header2' => $output[1],
 	'footer' => $output[2]
 );
-?>

@@ -1,29 +1,17 @@
 <?php
-// $Id: xoops_version.php,v 1.3 2006/03/06 00:26:33 skenow Exp $
-// ------------------------------------------------------------------------ //
-// XOOPS - PHP Content Management System //
-// Copyright (c) 2000 XOOPS.org //
-// <http://www.xoops.org/> //
-// ------------------------------------------------------------------------ //
-// This program is free software; you can redistribute it and/or modify //
-// it under the terms of the GNU General Public License as published by //
-// the Free Software Foundation; either version 2 of the License, or //
-// (at your option) any later version. //
-// //
-// You may not change or alter any portion of this comment or credits //
-// of supporting developers from this source code or any supporting //
-// source code which is considered copyrighted (c) material of the //
-// original comment or credit authors. //
-// //
-// This program is distributed in the hope that it will be useful, //
-// but WITHOUT ANY WARRANTY; without even the implied warranty of //
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the //
-// GNU General Public License for more details. //
-// //
-// You should have received a copy of the GNU General Public License //
-// along with this program; if not, write to the Free Software //
-// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA //
-// ------------------------------------------------------------------------ //
+/**
+ * PHP GEDView version information
+ *
+ * The configuration information of this module
+ *
+ * @copyright 2007, The ImpressCMS Project, <https://www.impresscms.org/>
+ * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License (GPL)
+ * @since 1.0
+ * @author Steve Kenow
+ * @package pgv
+ *
+ */
+
 $modversion = array(
 	'name' => 'PHPGedView',
 	'version' => '2.0.0',
@@ -36,20 +24,36 @@ $modversion = array(
 	'official' => 0,
 	'image' => 'pgv_slogo.png',
 	'dirname' => basename(__DIR__),
-	'onInstall' => 'xoops_install_funcs.php',
-	'onUninstall' => 'xoops_install_funcs.php',
-	'onUpdate' => 'xoops_install_funcs.php');
+	'onInstall' => 'icms_install_funcs.php',
+	'onUninstall' => 'icms_install_funcs.php',
+	'onUpdate' => 'icms_install_funcs.php');
 
 // All tables should not have any prefix!
 $modversion['sqlfile']['mysql'] = "sql/mysql.sql";
 
 // Tables created by sql file (without prefix!)
-$modversion['tables'] = array('pgv_blocks', 'pgv_dates', 'pgv_families', 'pgv_favorites', 'pgv_individuals', 'pgv_messages', 'pgv_names', 'pgv_news', 'pgv_other', 'pgv_placelinks', 'pgv_places', 'pgv_sources', 'pgv_users', 'pgv_media', 'pgv_media_mapping', 'pgv_tblver');
+$modversion['tables'] = array(
+	'pgv_blocks', 
+	'pgv_dates', 
+	'pgv_families', 
+	'pgv_favorites', 
+	'pgv_individuals', 
+	'pgv_messages', 
+	'pgv_names', 
+	'pgv_news', 
+	'pgv_other', 
+	'pgv_placelinks', 
+	'pgv_places', 
+	'pgv_sources', 
+	'pgv_users', 
+	'pgv_media', 
+	'pgv_media_mapping', 
+	'pgv_tblver');
 
 // Admin things
 $modversion['hasAdmin'] = 1;
 $modversion['adminindex'] = 'admin.php';
-$modversion['adminmenu'] = 'xoops_adminmenu.php';
+$modversion['adminmenu'] = 'icms_adminmenu.php';
 
 // Menu
 $modversion['hasMain'] = 1;

@@ -60,7 +60,7 @@ $LOGFILE_CREATE = "monthly";					//-- set how often new log files are created, "
 $PGV_SESSION_SAVE_PATH = "";					//-- Path to save PHP session Files -- DO NOT MODIFY unless you know what you are doing
 												//-- leaving it blank will use the default path for your php configuration as found in php.ini
 $PGV_SESSION_TIME = "7200";						//-- number of seconds to wait before an inactive session times out
-$SERVER_URL = XOOPS_URL."/modules/pgv/";								//-- the URL used to access this server
+$SERVER_URL = ICMS_URL . "/modules/pgv/";								//-- the URL used to access this server
 $LOGIN_URL = "";								//-- the URL to use to go to the login page, use this value if you want to redirect to a different site when users login, useful for switching from http to https
 $PGV_MEMORY_LIMIT = "32M";						//-- the maximum amount of memory that PGV should be allowed to consume
 $ALLOW_REMEMBER_ME = true;						//-- whether the users have the option of being remembered on the current computer
@@ -69,4 +69,3 @@ $CONFIG_VERSION = "3.2";						//-- the PGV version that corresponds to this conf
 $CONFIGURED = false;
 require 'xoops_headfoot.php';
 require_once($PGV_BASE_DIRECTORY."includes/session.php");
-?>
